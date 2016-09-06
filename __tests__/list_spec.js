@@ -14,6 +14,11 @@ describe('List', () => {
     expect(tableNode).toBeDefined();
   });
 
+  it('Class of rendered table', () => {
+    const tableNode = TestUtils.findRenderedDOMComponentWithClass(list, 'myClass');
+    expect(tableNode).toBeDefined();
+  });
+
   it('List renders column name', () => {
     const array = TestUtils.scryRenderedDOMComponentsWithTag(list, 'th');
     expect(array.length).toEqual(1);
@@ -23,7 +28,7 @@ describe('List', () => {
   it('List renders data', () => {
     const array = TestUtils.scryRenderedDOMComponentsWithTag(list, 'td');
     expect(array.length).toEqual(3);
-    expect(array[0].textContent).toEqual('Name 1');
+    expect(array[1].textContent).toEqual('Name 2');
   });
 
 });

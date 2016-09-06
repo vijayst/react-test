@@ -3,7 +3,7 @@ import React from 'react';
 export default class List extends React.Component {
   render() {
     return (
-      <table>
+      <table className="myClass">
         <thead>
           <tr>
             <th>Name</th>
