@@ -2,7 +2,7 @@ var path = require('path');
 
 module.exports = {
   context: path.resolve('src/client'),
-  entry: ['./app.jsx'],
+  entry: ['./index.jsx'],
   output: {
     path: path.resolve('build/client/'),
     publicPath: '/scripts',
