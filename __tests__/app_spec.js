@@ -23,9 +23,7 @@ describe('App', () => {
 
   it('onAdd updates List', () => {
     const { children } = app.props;
-    expect(children.length).toEqual(2);
     children[0].props.onAdd('Name 1');
-
     const newApp = renderer.getRenderOutput();
     const list = newApp.props.children[1].props.data;
     expect(list.length).toEqual(1);
