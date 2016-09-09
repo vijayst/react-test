@@ -4,4 +4,10 @@ The project tests react components with Jest and Enzyme. The Jest tests are in "
 * npm run jest or jest - run jest tests.
 * npm run mocha - run enzyme tests.
 
+Four test suites which compares:
+* Basic Hello world testing.
+* Testing structure.
+* Testing behaviour.
+* Testing component interactions.
+
 More information will be available in an accompanying tutorial.
