@@ -10,4 +10,4 @@ Four test suites which compares:
 * Testing behaviour.
 * Testing component interactions.
 
-More information will be available in an accompanying tutorial.
+The [CodeMentor tutorial] (https://www.codementor.io/react/tutorial/unit-testing-react-components-jest-or-enzyme) walks through the project in more detail.
