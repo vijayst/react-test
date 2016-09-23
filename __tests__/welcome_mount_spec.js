@@ -1,5 +1,4 @@
 import React from 'react';
-import expect from 'expect';
 import { mount } from 'enzyme';
 import Welcome from '../src/client/components/welcome.jsx';
 
