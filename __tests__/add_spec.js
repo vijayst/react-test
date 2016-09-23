@@ -1,5 +1,5 @@
 import React from 'react';
-import TestUtils from 'react-addons-test-utils';
+import { mount } from 'enzyme';
 import Add from '../src/client/components/add.jsx';
 
 describe('Add', () => {
@@ -8,25 +8,26 @@ describe('Add', () => {
 
   beforeEach(() => {
     onAdd = jest.fn();
-    add = TestUtils.renderIntoDocument(<Add onAdd={onAdd} />);
+    add = mount(<Add onAdd={onAdd} />);
   });
 
   it('Add requires onAdd prop', () => {
-    expect(add.props.onAdd).toBeDefined();
+    expect(add.props().onAdd).toBeDefined();
   });
 
   it('Add renders button', () => {
-    const button = TestUtils.findRenderedDOMComponentWithTag(add, 'button');
+    const button = add.find('button').first();
     expect(button).toBeDefined();
   });
 
   it('Button click calls onAdd', () => {
-    const button = TestUtils.findRenderedDOMComponentWithTag(add, 'button');
-    const input = TestUtils.findRenderedDOMComponentWithTag(add, 'input');
-    input.value = 'Name 4';
-    TestUtils.Simulate.change(input);
-    TestUtils.Simulate.click(button);
-    expect(onAdd).toBeCalledWith(input.value);
+    const button = add.find('button').first();
+    const input = add.find('input').first();
+    // Does not let me change the value of input.
+    // Instead pass the value to eventargs.
+    input.simulate('change', { target: { value: 'Name 4' } });
+    button.simulate('click');
+    expect(onAdd).toBeCalledWith('Name 4');
   });
 
 });
